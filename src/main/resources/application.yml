@@ -13,30 +13,29 @@ spring:
         username: root
         password: root
         #druid相关配置
-        druid:
-          filters: stat,wall,log4j,config
-          #配置初始化大小/最小/最大
-          maxActive: 20
-          initialSize: 1
-          minIdle: 1
-          #获取连接等待超时时间
-          maxWait: 60000
-          #间隔多久进行一次检测，检测需要关闭的空闲连接
-          timeBetweenEvictionRunsMillis: 60000
-          minEvictableIdleTimeMillis: 300000
-          validationQuery: select 'x'
-          testWhileIdle: true
-          testOnBorrow: false
-          testOnReturn: false
-          #打开PSCache，并指定每个连接上PSCache的大小。oracle设为true，mysql设为false。分库分表较多推荐设置为false
-          poolPreparedStatements: true
-          maxOpenPreparedStatements: 20
+        #druid:
+        filters: stat,wall,log4j,config
+        #配置初始化大小/最小/最大
+        maxActive: 20
+        initialSize: 1
+        minIdle: 1
+        #获取连接等待超时时间
+        maxWait: 60000
+        #间隔多久进行一次检测，检测需要关闭的空闲连接
+        timeBetweenEvictionRunsMillis: 60000
+        minEvictableIdleTimeMillis: 300000
+        validationQuery: select 'x'
+        testWhileIdle: true
+        testOnBorrow: false
+        testOnReturn: false
+        #打开PSCache，并指定每个连接上PSCache的大小。oracle设为true，mysql设为false。分库分表较多推荐设置为false
+        poolPreparedStatements: true
+        maxOpenPreparedStatements: 20
 #          connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
 #          useGlobalDataSourceStat: true
 #          web-stat-filter:
 #           enabled: true
 #           exclusions: *.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid
-
 
     thymeleaf:
       cache: false # 开发时关闭缓存,不然没法看到实时页面
@@ -55,5 +54,5 @@ pagehelper:
     helperDialect: mysql
     reasonable: true
     supportMethodsArguments: true
-    params: count=countSql
-    returnPageInfo: check
+    #params: count=countSql
+    #returnPageInfo: check
